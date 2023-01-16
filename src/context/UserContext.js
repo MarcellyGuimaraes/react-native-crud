@@ -5,10 +5,20 @@ import users from '../data/users'
 const initialState = { users }
 const UserContext = createContext({})
 
+const actions = {
+  deleteUser(state, action) {
+    const user = action.payload
+    return {
+      // ...state,
+      users: state.users.filter((u) => u.id !== user.id),
+    }
+  },
+}
+
 export const UserProvider = ({ children }) => {
   const reducer = (state, action) => {
-    console.warn(action)
-    return state
+    const fn = actions[action.type]
+    return fn ? fn(state, action) : state
   }
 
   const [state, dispatch] = useReducer(reducer, initialState)
