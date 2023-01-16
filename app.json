@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "rn-crud",
+    "slug": "rn-crud",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
