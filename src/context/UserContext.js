@@ -1,4 +1,5 @@
 import { createContext } from 'react'
+import users from '../data/users'
 
 const UserContext = createContext({})
 
