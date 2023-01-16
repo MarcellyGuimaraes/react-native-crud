@@ -34,7 +34,10 @@ export default function UserForm({ route, navigation }) {
       <Button
         title="Salvar"
         onPress={() => {
-          dispatch({ type: user.id ? 'updateUser' : 'createUser', payload })
+          dispatch({
+            type: user.id ? 'updateUser' : 'createUser',
+            payload: user,
+          })
           navigation.goBack()
         }}
       />
